@@ -1,16 +1,20 @@
 const data = require('../data/zoo_data');
 
+const { species } = data;
+
 function countAnimals(animal) {
   if (animal === undefined) {
-    let noneParam = {};
-    for (let i = 0; i < data.species.length; i += 1) {
-      noneParam = { name: data.species.popularity };
-    }
-    return noneParam;
+    return species.map(({ name, popularity }) => `${name}: ${popularity}`);
   }
-  return 'ainda não';
+  if (animal.sex !== undefined) {
+    const specieFind = data.species.find(({ name }) => name.includes(animal.specie));
+    const sexSpecie = specieFind.residents.filter(({ sex: sexo }) => sexo === animal.sex);
+    return sexSpecie.length;
+  }
+  const specieFind = data.species.find(({ name }) => name.includes(animal.specie));
+  return specieFind.residents.length;
 }
 
-console.log(countAnimals());
+// console.log(countAnimals({ specie: 'lions' }));
 
 module.exports = countAnimals;
