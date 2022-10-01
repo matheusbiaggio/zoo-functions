@@ -14,7 +14,7 @@ function countEntrants(entrants) {
 }
 
 function calculateEntry(entrants) {
-  if (entrants === undefined || entrants.length === 0) {
+  if (entrants === undefined || Object.keys(entrants).length === 0) {
     return 0;
   }
   const priceTotalChild = (countEntrants(entrants).child) * (data.prices.child);
@@ -31,6 +31,6 @@ function calculateEntry(entrants) {
 //   // { name: 'Núbia Souza', age: 18 },
 //   // { name: 'Carlos Nogueira', age: 50 },
 // ];
-// console.log(calculateEntry(entrants));
+// console.log(calculateEntry({}));
 
 module.exports = { calculateEntry, countEntrants };
