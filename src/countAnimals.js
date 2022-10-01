@@ -5,8 +5,8 @@ const { species } = data;
 function countAnimals(animal) {
   if (animal === undefined) {
     let allAnimals = {};
-    allAnimals = species.map(({ name, popularity }) => ({
-      [name]: popularity,
+    allAnimals = species.map(({ name, residents }) => ({
+      [name]: residents.length,
     }));
     const newObject = Object.assign({}, ...allAnimals);
     return newObject;
