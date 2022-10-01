@@ -57,4 +57,4 @@ const data = require('../data/zoo_data');
 
 // console.log(getSchedule('Saturday'));
 
-module.exports = getSchedule;
+// module.exports = getSchedule;
