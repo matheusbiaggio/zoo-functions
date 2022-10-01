@@ -4,7 +4,12 @@ const { species } = data;
 
 function countAnimals(animal) {
   if (animal === undefined) {
-    return species.map(({ name, popularity }) => `${name}: ${popularity}`);
+    let allAnimals = {};
+    allAnimals = species.map(({ name, popularity }) => ({
+      [name]: popularity,
+    }));
+    const newObject = Object.assign({}, ...allAnimals);
+    return newObject;
   }
   if (animal.sex !== undefined) {
     const specieFind = data.species.find(({ name }) => name.includes(animal.specie));
