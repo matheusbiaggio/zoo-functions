@@ -30,37 +30,52 @@ function getLocationAnimals(objectParam) {
   for (let i = 0; i < locationFind.length; i += 1) {
     [locationWithRepeat[i]] = locationFind[i];
   }
-  const locationNoRepeat = Array.from(new Set(locationWithRepeat));
-  return locationNoRepeat;
+  // const locationNoRepeat = Array.from(new Set(locationWithRepeat));
+  return locationWithRepeat;
 }
 
-function returnObject(employe, locationAnimal) {
+function getNameAnimalsById(objectParam) {
+  const animalEmployee = findAnimalByEmployee(objectParam);
+  const nameFind = [];
+  const nameAnimals = [];
+  for (let i = 0; i < animalEmployee.length; i += 1) {
+    nameFind[i] = animalEmployee[i].map((nameFinder) => nameFinder.name);
+  }
+  for (let i = 0; i < nameFind.length; i += 1) {
+    [nameAnimals[i]] = nameFind[i];
+  }
+  return nameAnimals;
+}
+
+function returnObject(employe, locationAnimal, objectParam) {
+  const namesAnimals = getNameAnimalsById(objectParam);
   return {
     id: employe.id,
     fullName: `${employe.firstName} ${employe.lastName}`,
-    species: employe.responsibleFor,
+    species: namesAnimals,
     locations: locationAnimal,
   };
 }
 
 function getEmployeesCoverage(objectParam) {
   if (objectParam === undefined) {
-    return 'sem parametro';
+    return data.employees;
   }
   if (Object.keys(objectParam).includes('id')) {
     const employeeById = data.employees.find((employeId) => employeId.id.includes(objectParam.id));
     const locationAnimal = getLocationAnimals(objectParam);
-    return returnObject(employeeById, locationAnimal);
+    return returnObject(employeeById, locationAnimal, objectParam);
   }
   if (Object.keys(objectParam).includes('name')) {
     const employeeByName = getEmployeeByName(objectParam.name);
     const locationAnimal = getLocationAnimals(objectParam);
-    return returnObject(employeeByName, locationAnimal);
+    return returnObject(employeeByName, locationAnimal, objectParam);
   }
+  throw new Error('O id apresentado não é válido');
 }
 
 const param = {
-  name: 'Bethea',
+  name: 'Ardith',
 };
 console.log(getEmployeesCoverage(param));
 
