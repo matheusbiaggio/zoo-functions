@@ -2,6 +2,7 @@ const data = require('../data/zoo_data');
 
 // const { species } = data;
 // const week = ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday', 'Monday'];
+// const dh = data.hours;
 
 // function generateObjAllDay() {
 //   const allAnimalTuesday = species.filter((element) => element.availability.includes('Tuesday'));
@@ -13,13 +14,27 @@ const data = require('../data/zoo_data');
 //   const allAnimalSunday = species.filter((element) => element.availability.includes('Sunday'));
 //   const allAnimalMonday = species.filter((element) => element.availability.includes('Monday'));
 //   const animalObj = {
-//     Tuesday: { officeHour: `Open from ${data.hours.Tuesday.open}am until ${data.hours.Tuesday.close}pm`, exhibition: allAnimalTuesday.map((nameAnimal) => nameAnimal.name) },
-//     Wednesday: { officeHour: `Open from ${data.hours.Wednesday.open}am until ${data.hours.Wednesday.close}pm`, exhibition: allAnimalWednesday.map((nameAnimal) => nameAnimal.name) },
-//     Thursday: { officeHour: `Open from ${data.hours.Thursday.open}am until ${data.hours.Thursday.close}pm`, exhibition: allAnimalThursday.map((nameAnimal) => nameAnimal.name) },
-//     Friday: { officeHour: `Open from ${data.hours.Friday.open}am until ${data.hours.Friday.close}pm`, exhibition: allAnimalFriday.map((nameAnimal) => nameAnimal.name) },
-//     Saturday: { officeHour: `Open from ${data.hours.Saturday.open}am until ${data.hours.Saturday.close}pm`, exhibition: allAnimalSaturday.map((nameAnimal) => nameAnimal.name) },
-//     Sunday: { officeHour: `Open from ${data.hours.Sunday.open}am until ${data.hours.Sunday.close}pm`, exhibition: allAnimalSunday.map((nameAnimal) => nameAnimal.name) },
-//     Monday: { officeHour: `Open from ${data.hours.Monday.open}am until ${data.hours.Monday.close}pm`, exhibition: allAnimalMonday.map((nameAnimal) => nameAnimal.name) },
+//     Tuesday: {
+//       officeHour: `Open from ${dh.Tuesday.open}am until ${dh.Tuesday.close}pm`,
+//       exhibition: allAnimalTuesday.map((nameAnimal) => nameAnimal.name) },
+//     Wednesday: {
+//       officeHour: `Open from ${dh.Wednesday.open}am until ${dh.Wednesday.close}pm`,
+//       exhibition: allAnimalWednesday.map((nameAnimal) => nameAnimal.name) },
+//     Thursday: {
+//       officeHour: `Open from ${dh.Thursday.open}am until ${dh.Thursday.close}pm`,
+//       exhibition: allAnimalThursday.map((nameAnimal) => nameAnimal.name) },
+//     Friday: {
+//       officeHour: `Open from ${dh.Friday.open}am until ${dh.Friday.close}pm`,
+//       exhibition: allAnimalFriday.map((nameAnimal) => nameAnimal.name) },
+//     Saturday: {
+//       officeHour: `Open from ${dh.Saturday.open}am until ${dh.Saturday.close}pm`,
+//       exhibition: allAnimalSaturday.map((nameAnimal) => nameAnimal.name) },
+//     Sunday: {
+//       officeHour: `Open from ${dh.Sunday.open}am until ${dh.Sunday.close}pm`,
+//       exhibition: allAnimalSunday.map((nameAnimal) => nameAnimal.name) },
+//     Monday: {
+//       officeHour: `Open from ${dh.Monday.open}am until ${dh.Monday.close}pm`,
+//       exhibition: allAnimalMonday.map((nameAnimal) => nameAnimal.name) },
 //   };
 //   return animalObj;
 // }
@@ -55,6 +70,6 @@ const data = require('../data/zoo_data');
 //   return generateObjAllDay();
 // }
 
-// console.log(getSchedule('Saturday'));
+// console.log(getSchedule());
 
 // module.exports = getSchedule;
