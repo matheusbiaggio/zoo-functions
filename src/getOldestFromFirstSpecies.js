@@ -9,14 +9,13 @@ function getOldestAnimalsById(id) {
   }
   const ageAnimals = animals[0].map((element) => element.residents);
   console.log(ageAnimals[0]);
-  let oldestByClass = ageAnimals[0].reduce((acc, curr) => {
-    if(acc.age > curr.age) {
+  const oldestByClass = ageAnimals[0].reduce((acc, curr) => {
+    if (acc.age > curr.age) {
       return acc;
     }
     return curr;
   });
-  const finalResult = [oldestByClass.name, oldestByClass.sex, oldestByClass.age];
-  return finalResult;
+  return oldestByClass;
 }
 
 function getOldestFromFirstSpecies(id) {
@@ -28,7 +27,7 @@ function getOldestFromFirstSpecies(id) {
   //   }
   //   return current;
   // });
-  return oldestByClass;
+  return [oldestByClass.name, oldestByClass.sex, oldestByClass.age];
 }
 
 module.exports = getOldestFromFirstSpecies;
