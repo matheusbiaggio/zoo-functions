@@ -12,6 +12,4 @@ function getEmployeeByName(employeeName) {
   }
 }
 
-console.log(getEmployeeByName('Bethea'));
-
 module.exports = getEmployeeByName;
